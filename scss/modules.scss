@@ -1,0 +1,328 @@
+@keyframes arrowButtonHover {
+  from{
+    transform: translateY(-2px);
+  }
+  to{
+    transform: translateY(3px);
+  }
+}
+@keyframes arrowButtonHover-down {
+  from{
+    transform: translateY(5px) rotateZ(180deg);
+
+  }
+  to{
+    transform: translateY(-2px) rotateZ(180deg);
+  }
+}
+@keyframes arrowButtonHover-right {
+  from{
+    transform: translate(-2px, 3px);
+  }
+  to{
+    transform: translate(3px, 3px);
+  }
+}
+.burger-menu.navbar-toggler {
+  outline: none;
+  position: relative;
+  display: none;
+  border: 0;
+  width: 5.5rem;
+  height: 5.5rem;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  box-shadow: none;
+  @include media-breakpoint-down(lg){
+    display: block;
+
+  }
+  &::after,
+  &::before {
+    content: "";
+  }
+
+  span,
+  &::after,
+  &::before {
+    backface-visibility: hidden;
+    position: absolute;
+    left: 1.3rem;
+    right: 1.3rem;
+    border-top: 0.4rem solid #000;
+    transition: .2s;
+    border-radius: 0.7rem;
+  }
+
+  &::before {
+    top: 1.8rem;
+  }
+
+  span {
+    top: 2.6rem;
+  }
+
+  &::after {
+    top: 3.4rem;
+  }
+
+  &.active {
+    &::before,
+    &::after {
+      top: 2.5rem;
+      backface-visibility: hidden;
+      transition: .3s;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    span {
+      opacity: 0;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+.search-container{
+  min-width: 4em;
+  right: -8em;
+  @include media-breakpoint-down(lg){
+    right: 0;
+  }
+  .search-box {
+    transition: width $tl, border-radius $tl, background $tl, box-shadow $tl;
+    width: 4em;
+    height: 4em;
+    border-radius: 2em;border: none;
+    cursor: pointer;
+    background: transparent;
+    & + label .search-icon {    color: black    }
+    &:hover {
+      color: white;
+      background: $body-grey;
+      & + label .search-icon {    color: white    }
+    }
+    &:focus {
+      transition: width $tl cubic-bezier(0,1.22,.66,1.39), border-radius $tl, background $tl;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      padding-left: 15px;
+      cursor: text;
+      width: 20em;
+      background: rgb(235, 235, 235);
+      color: black;
+      & + label .search-icon {
+        color: black;
+      }
+    }
+    &:not(:focus) {
+      text-indent:-5000px;
+    } // for more-graceful falling back (:not browsers likely support indent)
+  }
+
+  #search-submit {
+    position: relative;
+    left: -5000px;
+  }
+
+  label{
+    top: -.3em;
+    .search-icon {
+      position: absolute;
+      color: white;
+      cursor: pointer;
+      width: 2.4em;
+      height: 2.4em;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 1em;
+    }
+  }
+}
+.button-green{
+  color: white;
+  background-color: $main-color;
+  padding: 12px 24px;
+  border-radius: 2em;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  transition: .1s;
+  display: block;
+  &:hover{
+    color: $main-color;
+    background: transparent;
+    border: 1px solid $main-color;
+  }
+}
+.button-outline-green{
+  color: $main-color;
+  background-color: transparent;
+  padding: 12px 24px;
+  border-radius: 2em;
+  border: 1px solid $main-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+  top: 2px;
+  position: relative;
+  white-space: nowrap;
+  &:after{
+    content: url("../media/arrowDown.svg");
+    transform: translateY(3px);
+  }
+  &:hover{
+    color: $main-color;
+    &:after{
+      animation: arrowButtonHover .5s infinite;
+      //content: url("../media/arrowDown.svg");
+    }
+  }
+
+}
+.button-outline-white{
+  color: white;
+  background-color: transparent;
+  padding: 12px 24px;
+  border-radius: 2em;
+  white-space: nowrap;
+  border: 1px solid white;
+  transition: .1s;
+  display: flex;
+  gap: .5em;
+  &:after{
+    content: url("../media/whiteArrow-right.svg");
+    transform:translateY(3px);
+  }
+  &:hover{
+    color: white;
+
+    &:after{
+
+      animation: arrowButtonHover-right .5s infinite;
+    }
+  }
+}
+.button-outline-black{
+  color: black;
+  background-color: transparent;
+  padding: 12px 24px;
+  border-radius: 2em;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+
+  &:after{
+    content: url("../media/arrowDownBlack.svg");
+    transform: translateY(3px);
+  }
+  &:hover{
+    color: black;
+    &:after{
+      animation: arrowButtonHover .5s infinite;
+      //content: url("../media/arrowDown.svg");
+    }
+  }
+  &.arrow-reverse{
+    &::after{
+      content: url("../media/arrowDownBlack.svg");
+      transform: rotateZ(180deg) translateY(3px);
+    }
+    &:hover{
+      &:after{
+
+        animation: arrowButtonHover-down .5s infinite ;
+        //content: url("../media/arrowDown.svg");
+      }
+    }
+  }
+
+
+}
+.button-white{
+  color: $main-color;
+  background-color: white;
+  padding: 12px 24px;
+  border-radius: 2em;
+  white-space: nowrap;
+  border: 1px solid white;
+  transition: .1s;
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  &:hover{
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+  }
+}
+.cards {
+  padding-top: 9.6em;
+  .card{
+    max-width: 37.8em;
+    min-height: 37em;
+    padding: 4.8em 4em;
+    border-radius: 2.8em;
+    position: relative;
+    transition: 0.4s !important;
+    border: none;
+    color: black;
+
+    @include media-breakpoint-down(xxl){
+      max-width: 46%;
+      width: 46%;
+    }
+    @include media-breakpoint-down(lg){
+      max-width: 80%;
+      width: 80%;
+    }
+    @include media-breakpoint-down(sm){
+      max-width: 100%;
+      width: 100%;
+    }
+    .content-wrapper{
+      img{
+        margin-bottom: 32px;
+      }
+      h4 {
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 300;
+      }
+
+
+    }
+    span {
+      font-weight: 500;
+      width: fit-content;
+      text-decoration: none;
+      color: $main-color;
+      gap: .6em;
+      border-bottom: 1px solid $main-color;
+      &::after{
+        content: url("../media/green-arrow-right.svg");
+        display: block;
+        transform: translateY(3px);
+      }
+    }
+    &:hover {
+      transform: translateY(-7px ) !important;
+      box-shadow: 0 7px 11px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

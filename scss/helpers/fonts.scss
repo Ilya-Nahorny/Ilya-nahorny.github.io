@@ -1,0 +1,89 @@
+html,body{
+  font-size: 10px;
+  font-weight: 400;
+  @include media-breakpoint-down(lg){
+    font-size: 8px;
+  }
+}
+h1{
+  &.fluid{
+    &.normal{
+      @include fluid-type(1000px, $max-vw, 80px, 140px);
+    }
+    &.veryBig{
+      @include fluid-type(1000px, $max-vw, 180px, 433px);
+    }
+    &.post{
+      @include fluid-type(1000px, $max-vw, 50px, 110px);
+    }
+    &.slide-title{
+      @include fluid-type(1000px, $max-vw, 40px, 76px);
+      font-weight: 500;
+    }
+  }
+}
+h2{
+  &.fluid{
+    @include fluid-type(1000px, $max-vw, 35px, 65px);
+  }
+}
+h3{
+  &.fluid{
+    @include fluid-type(1000px, $max-vw, 80px, 102px);
+    &.big{
+      @include fluid-type(1000px, $max-vw, 140px, 180px);
+    }
+  }
+}
+h4{
+  &.fluid{
+    @include fluid-type(1000px, $max-vw, 25px, 35px);
+  }
+}
+
+span,strong{
+  font-size: 1em;
+  font-weight: 700;
+}
+p,li,a,span{
+  margin:  0;
+  &.fluid{
+    &.fs-12{
+      @include fluid-type(1000px, $max-vw, 12px, 12px);
+    }
+    &.fs-14{
+      @include fluid-type(1000px, $max-vw, 14px, 15px);
+    }
+    &.fs-16{
+      @include fluid-type(1000px, $max-vw, 15px, 17px);
+    }
+    &.fs-40{
+      @include fluid-type(1000px, $max-vw, 20px, 40px);
+    }
+    &.smaller{
+      @include fluid-type(1000px, $max-vw, 16px, 24px);
+    }
+    &.small{
+      @include fluid-type(1000px, $max-vw, 16px, 32px);
+
+    }
+    &.normal{
+      @include fluid-type(1000px, $max-vw, 20px, 36px);
+      span{
+        &.bigger{
+          font-size: 1.7em;
+        }
+        &.big{
+          font-size: 1.3em;
+        }
+      }
+    }
+    &.big{
+      @include fluid-type(1000px, $max-vw, 16px, 28px);
+
+    }
+    &.bigger{
+      @include fluid-type(1000px, $max-vw, 32px, 58px);
+    }
+  }
+}

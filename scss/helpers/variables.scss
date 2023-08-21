@@ -1,0 +1,159 @@
+$main-color: #1B5B31;
+$body-grey:#F5F0EC;
+$biege:#DCC1AB;
+
+$tl: 0.6s; // transition length
+$inter-font: 'Inter', sans-serif;
+$montserrat-font: 'Montserrat', sans-serif;
+
+%fix-xy{
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+%fix-y{
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+%fix-x{
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+}
+
+.fix-xy{
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.fix-y{
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+.fix-x{
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+}
+.px-20{
+  padding-left: 20rem !important;
+  padding-right: 20rem !important;
+  @include media-breakpoint-down(lg){
+    padding-left: 10rem !important;
+    padding-right: 10rem !important;
+  }
+}
+.px-16{
+  padding-left: 16rem !important;
+  padding-right: 16rem !important;
+  @include media-breakpoint-down(lg){
+    padding-left: 3.9rem !important;
+    padding-right: 3.9rem !important;
+  }
+}
+.px-11{
+  padding-left: 11rem !important;
+  padding-right: 11rem !important;
+  @include media-breakpoint-down(lg){
+    padding-left: 3.9rem !important;
+    padding-right: 3.9rem !important;
+  }
+}
+.px-9{
+  padding-left: 8.9rem !important;
+  padding-right: 8.9rem !important;
+  @include media-breakpoint-down(lg){
+    padding-left: 3.9rem !important;
+    padding-right: 3.9rem !important;
+  }
+}
+.px-6{
+  padding-left: 1.8rem !important;
+  padding-right: 1.8rem !important;
+}
+
+.py-6{
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+  @include media-breakpoint-down(lg){
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+.py-8{
+  padding-top: 8rem !important;
+  padding-bottom: 8rem !important;
+  @include media-breakpoint-down(lg){
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+.py-12{
+  padding-top: 12rem !important;
+  padding-bottom: 12rem !important;
+  @include media-breakpoint-down(lg){
+    padding-top: 5.5rem !important;
+    padding-bottom: 5.5rem !important;
+  }
+}
+
+.py-14{
+  padding-top: 14.5rem !important;
+  padding-bottom: 14.5rem !important;
+  @include media-breakpoint-down(lg){
+    padding-top: 7.5rem !important;
+    padding-bottom: 7.5rem !important;
+  }
+}
+.pt-6{
+  padding-top: 6.2rem !important;
+  @include media-breakpoint-down(lg){
+    padding-top: 3rem !important;
+  }
+}
+.pt-12{
+  padding-top: 12rem !important;
+  @include media-breakpoint-down(lg){
+    padding-top: 5.5rem !important;
+  }
+}
+
+.pb-6{
+  padding-bottom: 6.2rem !important;
+  @include media-breakpoint-down(lg){
+    padding-bottom: 3rem !important;
+  }
+}
+.pb-8{
+  padding-bottom: 8rem !important;
+  @include media-breakpoint-down(lg){
+    padding-bottom: 4rem !important;
+  }
+}
+.gap-48{
+  gap:4.8em;
+  @include media-breakpoint-down(md){
+    gap: 2.8em;
+  }
+}
+.gap-64{
+  gap:6.4em;
+  @include media-breakpoint-down(md){
+    gap: 4.4em;
+  }
+}
+
+.montserrat{
+  font-family: $montserrat-font;
+}
+.inter{
+  font-family: $inter-font;
+}
+// DESIGN VIEWPORTS
+$min-vw: 320px;
+$max-vw: 1920px;
